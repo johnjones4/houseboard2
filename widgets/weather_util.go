@@ -3,6 +3,7 @@ package widgets
 import (
 	"fmt"
 	"image"
+	"image/color"
 	"main/core"
 	"math"
 	"time"
@@ -11,7 +12,7 @@ import (
 )
 
 func drawWeather(rect image.Rectangle, ctx *gg.Context, weather core.Weather) {
-	ctx.SetRGB(0, 0, 0)
+	ctx.SetColor(color.Black)
 
 	_fontNormlBold := fontRelativeNormalBold(float64(rect.Dy()))
 

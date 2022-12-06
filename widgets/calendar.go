@@ -3,6 +3,7 @@ package widgets
 import (
 	"fmt"
 	"image"
+	"image/color"
 	"main/core"
 	"main/service"
 	"time"
@@ -48,7 +49,7 @@ func (w *calendar) Draw(rect image.Rectangle, ctx *gg.Context, info interface{})
 	cellHeight := (rect.Dy() - (padding * 2)) / rows
 	day := time.Now()
 	startCol := int(day.Weekday())
-	ctx.SetRGB(0, 0, 0)
+	ctx.SetColor(color.Black)
 	for row := 0; row < rows; row++ {
 		for col := 0; col < cols; col++ {
 			if (row == 0 && col >= startCol) || row > 0 {

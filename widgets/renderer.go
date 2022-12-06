@@ -2,16 +2,17 @@ package widgets
 
 import (
 	"image"
+	"image/color"
 	"main/core"
 
 	"github.com/fogleman/gg"
 )
 
 func Render(infos map[string]interface{}, widgets []core.Widget, width, height, rows, cols int) (*gg.Context, error) {
-	ctx := gg.NewContext(width, height)
+	ctx := gg.NewContextForImage(image.NewGray(image.Rect(0, 0, width, height)))
 	colWidth := width / cols
 	rowWidth := height / rows
-	ctx.SetRGB(1, 1, 1)
+	ctx.SetColor(color.White)
 	ctx.DrawRectangle(0, 0, float64(width), float64(height))
 	ctx.Fill()
 	for _, info := range infos {

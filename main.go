@@ -3,7 +3,8 @@ package main
 import (
 	"encoding/json"
 	"fmt"
-	config "main/IT8951-ePaper/Config"
+
+	it8951 "main/IT8951-ePaper"
 	"main/core"
 	"main/service"
 	"main/widgets"
@@ -14,7 +15,7 @@ import (
 )
 
 func main() {
-	config.Init()
+	it8951.Init()
 
 	l := newLogger()
 	log.SetOutput(l)

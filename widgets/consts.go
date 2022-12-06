@@ -14,12 +14,12 @@ func fontMust(path string, size float64) font.Face {
 }
 
 var (
-	fontTitle      = fontMust("./OPen_Sans/static/OpenSans/OpenSans-SemiBold.ttf", 20)
-	fontBig        = fontMust("./OPen_Sans/static/OpenSans/OpenSans-SemiBold.ttf", 120)
-	fontSmall      = fontMust("./OPen_Sans/static/OpenSans/OpenSans-Regular.ttf", 10)
-	fontNormal     = fontMust("./OPen_Sans/static/OpenSans/OpenSans-Regular.ttf", 18)
-	fontNormalBold = fontMust("./OPen_Sans/static/OpenSans/OpenSans-SemiBold.ttf", 18)
-	fontNormalPlus = fontMust("./OPen_Sans/static/OpenSans/OpenSans-Regular.ttf", 22)
+	fontTitle      = fontMust("./Open_Sans/static/OpenSans/OpenSans-SemiBold.ttf", 20)
+	fontBig        = fontMust("./Open_Sans/static/OpenSans/OpenSans-SemiBold.ttf", 120)
+	fontSmall      = fontMust("./Open_Sans/static/OpenSans/OpenSans-Regular.ttf", 10)
+	fontNormal     = fontMust("./Open_Sans/static/OpenSans/OpenSans-Regular.ttf", 18)
+	fontNormalBold = fontMust("./Open_Sans/static/OpenSans/OpenSans-SemiBold.ttf", 18)
+	fontNormalPlus = fontMust("./Open_Sans/static/OpenSans/OpenSans-Regular.ttf", 22)
 )
 
 const (
@@ -27,17 +27,17 @@ const (
 )
 
 func fontRelativeBig(h float64) font.Face {
-	return fontMust("./OPen_Sans/static/OpenSans/OpenSans-SemiBold.ttf", h*0.3)
+	return fontMust("./Open_Sans/static/OpenSans/OpenSans-SemiBold.ttf", h*0.3)
 }
 
 func fontRelativeNormal(h float64) font.Face {
-	return fontMust("./OPen_Sans/static/OpenSans/OpenSans-Regular.ttf", h*0.05)
+	return fontMust("./Open_Sans/static/OpenSans/OpenSans-Regular.ttf", h*0.05)
 }
 
 func fontRelativeNormalBold(h float64) font.Face {
-	return fontMust("./OPen_Sans/static/OpenSans/OpenSans-SemiBold.ttf", h*0.05)
+	return fontMust("./Open_Sans/static/OpenSans/OpenSans-SemiBold.ttf", h*0.05)
 }
 
 func fontRelativeNormalPlus(h float64) font.Face {
-	return fontMust("./OPen_Sans/static/OpenSans/OpenSans-Regular.ttf", h*0.06)
+	return fontMust("./Open_Sans/static/OpenSans/OpenSans-Regular.ttf", h*0.06)
 }

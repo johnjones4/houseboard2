@@ -2,6 +2,7 @@ package widgets
 
 import (
 	"image"
+	"image/color"
 	"main/core"
 	"main/service"
 
@@ -40,7 +41,7 @@ func (w *traffic) Draw(rect image.Rectangle, ctx *gg.Context, info interface{}) 
 		return err
 	}
 
-	ctx.SetRGB(0, 0, 0)
+	ctx.SetColor(color.Black)
 	for i, dest := range traffic.Destinations {
 		x := float64(rect.Min.X + padding)
 		y := float64(rect.Min.Y + padding + ((fontNormalBold.Metrics().Height.Ceil() + padding) * i))

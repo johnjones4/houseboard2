@@ -2,6 +2,7 @@ package widgets
 
 import (
 	"image"
+	"image/color"
 
 	"github.com/fogleman/gg"
 )
@@ -30,7 +31,7 @@ func (w *staticWidget) Colspan() int {
 }
 
 func (sw *staticWidget) Draw(rect image.Rectangle, ctx *gg.Context, title string) (image.Rectangle, error) {
-	ctx.SetRGB(0, 0, 0)
+	ctx.SetColor(color.Black)
 
 	x := float64(rect.Min.X) + padding
 	y := float64(rect.Min.Y) + padding
