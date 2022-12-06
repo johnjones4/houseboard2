@@ -2,6 +2,7 @@ package main
 
 import (
 	"encoding/json"
+	"fmt"
 	"main/core"
 	"main/service"
 	"main/widgets"
@@ -12,6 +13,9 @@ import (
 )
 
 func main() {
+	l := newLogger()
+	log.SetOutput(l)
+
 	configBytes, err := os.ReadFile(os.Getenv("CONFIG_FILE"))
 	if err != nil {
 		panic(err)
@@ -61,6 +65,11 @@ func main() {
 			log.Panic(err)
 		}
 
-		os.Exit(0)
+		fmt.Print(l.dump())
+		l.reset()
+
+		if os.Getenv("RUN_ONCE") != "" {
+			os.Exit(0)
+		}
 	}
 }

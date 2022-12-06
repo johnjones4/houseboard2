@@ -94,9 +94,26 @@ func drawWeather(rect image.Rectangle, ctx *gg.Context, weather core.Weather) {
 		value: weather.Source(),
 	})
 
-	_fontNorml := fontRelativeNormal(float64(rect.Dy()))
 	textX := rect.Min.X + padding + int(leftSideWidth) + padding
-	textY := circleY - (len(keyVals) / 2 * _fontNorml.Metrics().Height.Ceil())
+	lines := len(keyVals)
+	extraText := weather.Text()
+	extraTextLines := []string{}
+	if extraText != "" {
+		width := float64(rect.Max.X - padding - textX)
+		extraTextLines = ctx.WordWrap(extraText, width)
+		lines += len(extraTextLines)
+	}
+
+	_fontNorml := fontRelativeNormal(float64(rect.Dy()))
+
+	textY := circleY - (lines / 2 * _fontNorml.Metrics().Height.Ceil())
+
+	for _, line := range extraTextLines {
+		ctx.SetFontFace(_fontNorml)
+		ctx.DrawStringAnchored(line, float64(textX), float64(textY), 0, 1)
+		textY += _fontNorml.Metrics().Height.Ceil()
+	}
+
 	for _, kv := range keyVals {
 		keyStr := kv.key + ":"
 

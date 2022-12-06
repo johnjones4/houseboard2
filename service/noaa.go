@@ -33,6 +33,7 @@ type noaaWeatherPointResponse struct {
 type NoaaWeatherForecastPeriod struct {
 	StartTime        time.Time `json:"startTime"`
 	EndTime          time.Time `json:"endTime"`
+	ShortForecast    string    `json:"shortForecast"`
 	DetailedForecast string    `json:"detailedForecast"`
 	Name             string    `json:"name"`
 	Temperature      float64   `json:"temperature"`
@@ -117,7 +118,7 @@ func (w NoaaWeatherForecastPeriod) Created() time.Time {
 }
 
 func (w NoaaWeatherForecastPeriod) Text() string {
-	return ""
+	return w.ShortForecast
 }
 
 func (w NoaaWeatherForecastPeriod) Label() string {

@@ -16,6 +16,7 @@ func fontMust(path string, size float64) font.Face {
 var (
 	fontTitle      = fontMust("./OPen_Sans/static/OpenSans/OpenSans-SemiBold.ttf", 20)
 	fontBig        = fontMust("./OPen_Sans/static/OpenSans/OpenSans-SemiBold.ttf", 120)
+	fontSmall      = fontMust("./OPen_Sans/static/OpenSans/OpenSans-Regular.ttf", 10)
 	fontNormal     = fontMust("./OPen_Sans/static/OpenSans/OpenSans-Regular.ttf", 18)
 	fontNormalBold = fontMust("./OPen_Sans/static/OpenSans/OpenSans-SemiBold.ttf", 18)
 	fontNormalPlus = fontMust("./OPen_Sans/static/OpenSans/OpenSans-Regular.ttf", 22)

@@ -43,6 +43,7 @@ func (sw *staticWidget) Draw(rect image.Rectangle, ctx *gg.Context, title string
 	ctx.SetFontFace(fontTitle)
 	textHeight := fontTitle.Metrics().Height.Ceil()
 	y += padding + float64(textHeight)
+	h -= padding + float64(textHeight)
 	ctx.DrawString(title, x+padding, y)
 
 	newRect := image.Rect(int(x), int(y), int(x+w), int(y+h))
