@@ -2,7 +2,7 @@ package main
 
 import (
 	"image"
-	it8951 "main/IT8951-ePaper"
+	it8951 "main/IT8951"
 	"os"
 
 	"github.com/fogleman/gg"
