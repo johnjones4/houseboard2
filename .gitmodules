@@ -1,0 +1,3 @@
+[submodule "prod/IT8951"]
+	path = prod/IT8951
+	url = git@github.com:johnjones4/IT8951-ePaper.git
